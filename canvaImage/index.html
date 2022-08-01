@@ -1,45 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-brs">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canva Image</title>
 </head>
-<body>
+
+<body onclick="shot()">
     <header id='menu'>
         <p>Menu de navegação</p>
     </header>
     <section id='body-edition'>
-        <section id="left-section">
+        <div id="capture">
 
-            <!-- ESTA É A BOX QUE SE TRANSFORMARÁ EM IMAGEM -->
-            <div class="box-image">
-                <div class="title-box">
-                    <h1>Title</h1>
-                </div>
-                
-                <div class='content-box'>
-                    <div class="article">
-                        <h3>Topico 1</h3>
-                        <p>Conteudo</p>
+            <section id="left-section">
+
+                <!-- ESTA É A BOX QUE SE TRANSFORMARÁ EM IMAGEM -->
+                <div class="box-image">
+                    <div class="title-box">
+                        <h1>Title</h1>
+                    </div>
+
+                    <div class='content-box'>
+                        <div class="article">
+                            <h3>Topico 1</h3>
+                            <p>Conteudo</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-        </section>
+            </section>
 
+            <section id="right-section">
+                <h1>Personalize sua imagem</h1>
+                <div>
 
-        <section id="right-section">
-            <h1>Personalize sua imagem</h1>
-            <div>
-                
-            </div>
-        </section>
+                </div>
+            </section>
     </section>
 
     <footer>
         <p>Footer da página</p>
     </footer>
+    </div>
+
+    <section>
+
+
+        <!-- <div id="capture" style="padding: 10px; background: #f5da55">
+                <h4 style="color: #000; ">Hello world!</h4>
+            </div> -->
+
+
+    </section>
+
+
+    <script>
+
+        function shot() {
+
+            
+            html2canvas(document.querySelector("#capture")).then(canvas => {
+                // canvas.classList.add('html-content')
+                document.body.appendChild(canvas)
+
+                download(canvas, 'myimage.png');
+            });
+            CreatePDFfromHTML()
+        }        
+    </script>
+
+    <script src="src/js/library/LIBhtml2canvas.js"></script>
+    <script src="src/js/downloardImage.js"></script>
 </body>
+
 </html>
