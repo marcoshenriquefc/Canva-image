@@ -1,0 +1,140 @@
+@import url(token.css);
+
+body{
+    width: 100vw;
+    height: 100vh;
+
+    max-height: 100vh;
+    /* overflow: hidden; */
+}
+
+
+#capture.shot{
+    transform: scale(150%);
+}
+
+/* HEADER STYLE */
+#menu{
+    width: 100%;
+    background-color: var(--primary-black);
+
+    padding: 20px 40px;
+
+    z-index: 5;
+}
+
+.menu__nav{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* LOGO HEADER  */
+#menu__logo{
+    max-width: 200px;
+}
+#menu__logo svg{
+    width: 100%;
+}
+
+
+
+/* BASE IMAGE EDITOR */
+.base{
+    background-color: var(--secondary-black);
+    max-height: 100%;
+    height: 100%;
+
+    box-shadow: inset 0px 7px 16px 14px rgb(0 0 0 / 10%);
+}
+
+.base__center{
+    display: flex;
+
+    max-width: 1300px;
+    min-height: 100%;
+
+    margin: 0 auto;
+
+    /* background-color: rgb(7, 42, 17); */
+}
+
+
+
+.base__view{
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    /* background-color: brown; */
+}
+
+.base__image{
+    background-color: #D9D9D9;
+
+    width: 40%;
+    min-width: 440px;
+    height: fit-content;
+
+    margin-top: 20px;
+}
+
+.base__image__header{
+    display: flex;
+    justify-content: center;
+    text-align: end;
+
+    width: 100%;
+    background-color: #D67C1C;
+
+    padding-top:20px;
+    padding-bottom: 30px;
+
+    z-index: 1;
+}
+
+.base__image__title{
+    width: 300px;
+}
+.base__image__title svg{
+    min-width: 100%;
+}
+.base__image__title h2{
+    margin-top: -15px;
+}
+
+.base__image__article{
+    background-color: white;
+    
+    min-height: fit-content;
+    min-height: 300px;
+    width: 400px;
+    max-width: 400px;
+
+    margin: 0 auto;
+    margin-top: -20px;
+    padding: 20px 30px;
+
+    border-radius: 20px;
+
+    z-index: 2;
+}
+
+
+.base__image__logotipo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 15px 0;
+}
+
+/* EDIT BASE SIDE  */
+.base__edit{
+    min-width: 400px;
+    background-color: #2E3239;
+
+    box-shadow: -17px 0px 40px 9px rgba(0, 0, 0, 0.1);
+}

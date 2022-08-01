@@ -1,0 +1,16 @@
+:root{
+
+    --primary-black: #161819;
+    --secondary-black: #26292B;
+    --dark-gray:#2E3239;
+
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
