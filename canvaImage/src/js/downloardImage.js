@@ -1,4 +1,53 @@
-/* Canvas Donwload */
+// LIMPANDO A DIV E TRANSFORMANDO EM CANVAS
+function shot() {
+    const image = document.querySelector("#capture");
+    const button = document.querySelectorAll(".addTopic");
+    const closeBtn = document.querySelectorAll(".closeItem");
+
+    //Removendo botões e aumentando a imagem
+    image.classList.add('shot');
+    if(button != null){
+        addClassToShot(button);
+    }
+    if(closeBtn != null){
+        addClassToShot(closeBtn);
+    }
+
+    //TRANSFORMANDO A IMAGEM EM CANVAS E PASSANDO PARA A FUNÇÃO
+    html2canvas(image)
+        .then(canvas => {
+            download(canvas, 'myimage.png');
+        });
+
+    //Retornando ao modelo normal de edição
+    image.classList.remove('shot');
+    if(button != null){
+        removeClassToShot(button);
+    }
+    if(closeBtn != null){
+        removeClassToShot(closeBtn);
+    }
+    // CreatePDFfromHTML()
+}
+
+//Removendo os itens de edição para "a foto"
+function addClassToShot(e){
+    console.log(e)
+    e.forEach((e) =>{
+        e.classList.add('removeToShot');
+    })
+}
+//Adicionando novamente os itens de edição
+function removeClassToShot(e){
+    console.log(e)
+    e.forEach((e) =>{
+        e.classList.remove('removeToShot');
+    })
+}
+
+
+
+// BAIXAR O CANVAS COMO IMAGEM
 function download(canvas, filename) {
     /// create an "off-screen" anchor tag
     var lnk = document.createElement('a'), e;
