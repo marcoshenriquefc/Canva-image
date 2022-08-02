@@ -107,6 +107,11 @@ body{
 }
 
 .base__image__article{
+    display: flex;
+    flex-direction: column;
+
+    gap:16px;
+
     position: relative;
     background-color: white;
     
@@ -195,7 +200,9 @@ body{
 
     border-radius: 50%;
 
+    transform: rotate(45deg);
     box-shadow: 3px 3px 5px 0px #25170146;
+    cursor: pointer;
 }
 .addItem:hover{
     box-shadow: inset 2px 2px 5px 0px #25170146;
@@ -254,4 +261,29 @@ body{
 
 .teste{
     top: -5px;
+}
+
+
+
+.addTopic{
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    background-color: green;
+    padding: 5px 10px;
+    opacity: 70%;
+
+    color: white;
+    font-weight: 600;
+
+    transition: all 0.3s;
+    border-radius: 0 0 10px 0;
+
+
+    cursor: pointer;
+}
+.addTopic:hover{
+    opacity: 1;
 }

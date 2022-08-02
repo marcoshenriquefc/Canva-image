@@ -1,13 +1,15 @@
 // LIMPANDO A DIV E TRANSFORMANDO EM CANVAS
 function shot() {
     const image = document.querySelector("#capture");
-    const button = document.querySelectorAll(".addTopic");
+    const addTopicBtn = document.querySelector(".addTopic");
+    const addItemBtn = document.querySelectorAll(".addItem");
     const closeBtn = document.querySelectorAll(".closeItem");
 
     //Removendo botões e aumentando a imagem
     image.classList.add('shot');
-    if(button != null){
-        addClassToShot(button);
+    addTopicBtn.classList.add('removeToShot');
+    if(addItemBtn != null){
+        addClassToShot(addItemBtn);
     }
     if(closeBtn != null){
         addClassToShot(closeBtn);
@@ -21,8 +23,9 @@ function shot() {
 
     //Retornando ao modelo normal de edição
     image.classList.remove('shot');
-    if(button != null){
-        removeClassToShot(button);
+    addTopicBtn.classList.remove('removeToShot');
+    if(addItemBtn != null){
+        removeClassToShot(addItemBtn);
     }
     if(closeBtn != null){
         removeClassToShot(closeBtn);
