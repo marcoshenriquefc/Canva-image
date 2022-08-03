@@ -1,0 +1,15 @@
+@media (max-width: 900px) {
+    .base__edit {
+        min-width: 300px;
+    }
+
+}
+
+@media (max-width: 800px) {
+    .base__center{
+        flex-direction: column-reverse;
+    }
+    .input-section{
+        margin-bottom: 10px;
+    }
+}
