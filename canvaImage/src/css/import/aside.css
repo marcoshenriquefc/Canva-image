@@ -1,6 +1,18 @@
 @import url(../token.css);
 
 
+.input-section {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+    margin-bottom: 40px;
+
+    width: 100%;
+    height: fit-content;
+}
+
+
 .title-input-box {
     background-color: var(--primary-darkblue);
 
@@ -26,3 +38,40 @@
 }
 
 
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
+}
+
+.input-box label {
+    color: #C2C4C7;
+    font-size: 16px;
+}
+
+.input-box .input {
+    height: 28px;
+
+    border: none;
+}
+
+
+.downloard-btn{
+    background-color: #FCC530;
+
+    color: #101102;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 4px 16px;
+    margin: 0 auto;
+
+    box-shadow: 3px 3px 5px 0px #00000046;
+
+    cursor: pointer;
+}
+.downloard-btn:hover{
+    box-shadow: inset 2px 2px 5px 0px #00000046;
+}
