@@ -15,6 +15,10 @@ function shot() {
         addClassToShot(closeBtn);
     }
 
+
+    let baseView = document.querySelector('.base__view')
+    baseView.scroll(0, 0)
+    window.scroll(0, 0)
     //TRANSFORMANDO A IMAGEM EM CANVAS E PASSANDO PARA A FUNÇÃO
     html2canvas(image)
         .then(canvas => {

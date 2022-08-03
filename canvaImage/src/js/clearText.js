@@ -1,17 +1,19 @@
 
-        addEventListener("click", function (e) {
-            let item = e.target
+addEventListener("click", clear)
 
-            if (item.classList.contains('title-topic') || item.classList.contains('list-item')) {
-                console.log('ok')
+function clear(e) {
+    let item = e.target
 
-                let text = item.innerText
-                console.log(text)
+    if (item.classList.contains('title-topic') || item.classList.contains('list-item')) {
+        console.log('ok')
 
-                if (text === 'Clique aqui para editar.:') {
-                    item.innerText = '';
-                }
-            }
+        let text = item.innerText
+        console.log(text)
+
+        if (text === 'Clique aqui para editar.:') {
+            item.innerText = '';
+        }
+    }
 
 
-        })
+}

@@ -4,7 +4,7 @@ body{
     width: 100vw;
     height: 100vh;
 
-    max-height: 100vh;
+    /* max-height: 100vh; */
     /* overflow: hidden; */
 }
 
@@ -68,7 +68,10 @@ body{
     justify-content: center;
 
     width: 100%;
-    /* background-color: brown; */
+    max-height: 100vh;
+    overflow-y: auto;
+    background-color: var(--secondary-black);
+    padding-bottom: 50px;
 }
 
 .base__image{
