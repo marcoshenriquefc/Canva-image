@@ -1,17 +1,19 @@
-// LIMPANDO A DIV E TRANSFORMANDO EM CANVAS
+// Clear div and transform in canvas
 function shot() {
     const image = document.querySelector("#capture");
     const addTopicBtn = document.querySelector(".addTopic");
     const addItemBtn = document.querySelectorAll(".addItem");
     const closeBtn = document.querySelectorAll(".closeItem");
 
-    //Removendo botões e aumentando a imagem
+    const nameInput = nameData();
+
+    //Remove button and transform scale up
     image.classList.add('shot');
     addTopicBtn.classList.add('removeToShot');
-    if(addItemBtn != null){
+    if (addItemBtn != null) {
         addClassToShot(addItemBtn);
     }
-    if(closeBtn != null){
+    if (closeBtn != null) {
         addClassToShot(closeBtn);
     }
 
@@ -19,42 +21,40 @@ function shot() {
     let baseView = document.querySelector('.base__view')
     baseView.scroll(0, 0)
     window.scroll(0, 0)
-    //TRANSFORMANDO A IMAGEM EM CANVAS E PASSANDO PARA A FUNÇÃO
+
+    //Transforming div in canvas and "shot"
     html2canvas(image)
         .then(canvas => {
-            download(canvas, 'myimage.png');
+            download(canvas, `${nameInput}.png`);
         });
 
-    //Retornando ao modelo normal de edição
+    //Return itens to edit mode
     image.classList.remove('shot');
     addTopicBtn.classList.remove('removeToShot');
-    if(addItemBtn != null){
+    if (addItemBtn != null) {
         removeClassToShot(addItemBtn);
     }
-    if(closeBtn != null){
+    if (closeBtn != null) {
         removeClassToShot(closeBtn);
     }
-    // CreatePDFfromHTML()
 }
 
-//Removendo os itens de edição para "a foto"
-function addClassToShot(e){
-    console.log(e)
-    e.forEach((e) =>{
+//Removing edit buttons to "shot"
+function addClassToShot(e) {
+    e.forEach((e) => {
         e.classList.add('removeToShot');
     })
 }
-//Adicionando novamente os itens de edição
-function removeClassToShot(e){
-    console.log(e)
-    e.forEach((e) =>{
+//Return edit butons again
+function removeClassToShot(e) {
+    e.forEach((e) => {
         e.classList.remove('removeToShot');
     })
 }
 
 
 
-// BAIXAR O CANVAS COMO IMAGEM
+// Downloard canva to image
 function download(canvas, filename) {
     /// create an "off-screen" anchor tag
     var lnk = document.createElement('a'), e;
@@ -78,4 +78,43 @@ function download(canvas, filename) {
     } else if (lnk.fireEvent) {
         lnk.fireEvent("onclick");
     }
+}
+
+// Name genarete do image
+function nameData() {
+    let input = document.querySelector('#area-input').value;
+    let color = document.querySelector('#color-input').value;
+    let nome = 'Comunica Digesti - '
+
+    switch (input) {
+        case "Marketing":
+            nome += input;
+            break;
+
+        case "Saúde e segurança na indústria":
+            nome += 'Saude-Seguranca'
+            break;
+
+        case "Centro de serviços compartilhados":
+            nome += 'Servicos-compartilhados'
+            break;
+
+        case "Gestão estratégica":
+            nome += 'Gestao-estrategica'
+            break;
+
+        case "Educação e tecnologia":
+            nome += 'Educacao-tecnologia'
+            break;
+
+        default:
+            nome += 'Default'
+            break;
+    }
+
+    if (color != 'padrao') {
+        nome += " - " + color;
+    }
+
+    return nome;
 }

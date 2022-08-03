@@ -4,17 +4,17 @@ addNewTopic()
 function addNewTopic() {
     let divBase = document.querySelector('.base__image__article');
 
-    //Nodes principais
+    //Main HMTL Elements
     let divMain = document.createElement('div')
     let spanMain = document.createElement('span')
     let divTitle = document.createElement('div')
     let listMain = document.createElement('ol')
-    //Nodes secundários
+    //Secondary HMTL Elements
     let h3Title = document.createElement('h3')
     let spanAddItem = document.createElement('span')
 
 
-    // Adicionando classes
+    // Adding classes
     divMain.classList.add('base__image__topico');
     spanMain.classList.add('closeItem', 'teste');
     divTitle.classList.add('image__title__box');
@@ -22,16 +22,15 @@ function addNewTopic() {
     h3Title.classList.add('topico01', 'title-topic');
     spanAddItem.classList.add('addItem', 'active');
 
-    //Setando atributos e valores
+    //Seting attributes and values/text
     h3Title.setAttribute('contenteditable', 'true')
-    h3Title.innerHTML = 'Clique aqui para editar.:' 
+    h3Title.innerHTML = 'Clique aqui para editar.:'
     spanMain.innerHTML = '\u00D7'
     spanAddItem.innerHTML = '\u00D7'
 
-    //Setando filhos 
+    //Seting children 
     divTitle.appendChild(h3Title)
     divTitle.appendChild(spanAddItem)
-
 
     divMain.appendChild(spanMain)
     divMain.appendChild(divTitle)
@@ -44,8 +43,6 @@ function addNewTopic() {
 
 //Create new Item
 function newItem(elemento) {
-    // // console.log(element)
-
     let node = elemento.children;
     let arr = [];
 
@@ -54,18 +51,15 @@ function newItem(elemento) {
     }
     let = lista = arr[2];
 
-    // Criando elementos 
+    //creating elements
     let div = document.createElement('div');
     let li = document.createElement("li");
 
-    // Setando atributos 
+    //Seting attributes 
     li.setAttribute('contenteditable', 'true')
-    li.setAttribute('onfocus', 'teste2()')
     li.classList.add('list-item')
     div.classList.add('item')
 
-    // let textReset = document.createTextNode('Clique aqui para editar.:');
-    // li.appendChild(textReset);
     div.appendChild(li);
     lista.appendChild(div);
 
@@ -75,20 +69,16 @@ function newItem(elemento) {
 
     span.className = "closeItem";
     span.appendChild(txt);
-    // span.setAttribute('onclick', 'deletItemList()')
 
     div.appendChild(span);
-
-    // let closeItem = document.querySelectorAll('.item .closeItem')
 }
 
-//Delete Topic and Itens
+//verify click to delet Topic/Itens AND create topics
 addEventListener("click", function (e) {
     let elemento = e.target;
 
     if (elemento.classList.contains('closeItem')) {
         let div = elemento.parentElement;
-        // console.log(div)
         div.remove();
     }
 
@@ -110,7 +100,7 @@ addEventListener('keypress', (event) => {
 //Cancel enter default
 function doNothing(event) {
 
-    //Parando funções normais do botão enter
+    //Cancel enter default
     if (!e) var e = window.event;
 
     e.cancelBubble = true;
@@ -121,28 +111,24 @@ function doNothing(event) {
         e.preventDefault();
     }
 
-
-
-    //Recebendo a lista dos itens
+    //Find HTML element list
     let lista = event.target.parentElement.parentElement.parentElement;
 
-    //Recebendos os itens da lista do tópico selecionado
+    //Take item list of specifical topic
     let allItensTopic = event.target.parentElement.parentElement.childNodes;
     let arrayAllItensToppic = [];
     allItensTopic.forEach(e => {
         arrayAllItensToppic.push(e);
     })
-    //Recebendo o ultimo item da lista
+    //take last element
     let lastItem = arrayAllItensToppic[arrayAllItensToppic.length - 1];
 
-    //Verificando se o ENTER foi feito na lista
-    //Verificando se o ultimo item é igual ao item TARGET
+    //Verify enter key pressed in list element
+    //Verify if last item is equals target item
     if (lista.classList.contains('base__image__topico')
         && lastItem == event.target.parentElement) {
-        //Criando um novo item na lista
+        //create a new item in list element
         newItem(lista)
-
-        allItensTopic[1].focus()
     }
 
     nextItem(event.target, allItensTopic)
@@ -155,7 +141,6 @@ function nextItem(itemAtual, listaItem) {
     listaItem.forEach((element, index) => {
         element = element.querySelector('.list-item')
         if (element == itemAtual) {
-            console.log('igual')
             nextItemArray = listaItem[index + 1].querySelector('.list-item')
         }
     })

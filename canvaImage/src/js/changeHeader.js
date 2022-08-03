@@ -14,7 +14,6 @@ function changeColor(area = "") {
     let html = document.querySelector('html');
     let colorInput = document.querySelector('#color-input');
 
-    // console.log(colorInput.value)
     const color = {
         Laranja: 'marketing',
         Verde: 'saude-seguranca',

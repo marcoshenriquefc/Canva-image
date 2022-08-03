@@ -1,19 +1,17 @@
 
+
+// Clear text placeholder when click 
 addEventListener("click", clear)
 
 function clear(e) {
     let item = e.target
 
     if (item.classList.contains('title-topic') || item.classList.contains('list-item')) {
-        console.log('ok')
 
         let text = item.innerText
-        console.log(text)
 
         if (text === 'Clique aqui para editar.:') {
             item.innerText = '';
         }
     }
-
-
 }
