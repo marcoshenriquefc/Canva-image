@@ -34,7 +34,7 @@ function newItem(elemento) {
 
     div.appendChild(span);
 
-    let closeItem = document.querySelectorAll('.item .closeItem')
+    // let closeItem = document.querySelectorAll('.item .closeItem')
 }
 
 addEventListener("click", function (e) {
