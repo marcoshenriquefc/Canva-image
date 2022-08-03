@@ -6,8 +6,34 @@
     --secondary-black: #26292B;
     --dark-gray:#2E3239;
 
+    --primary-white: #f8f8f8;
 
+    --primary-darkblue: #014898;
+    --primary-lightblue: #3C89FC;
+
+
+    --header-color:gray;
 }
+
+
+html.marketing{
+    --header-color: #D67C1C;
+}
+html.saude-seguranca{
+    --header-color: #A1C037;
+}
+html.servico-compartilhado{
+    --header-color: #DE9EC3;
+}
+html.gestao-estrategica{
+    --header-color: #BD9C69;
+}
+html.educacao-tecnologia{
+    --header-color: #6AB8EC;
+}
+
+
+
 
 
 *{

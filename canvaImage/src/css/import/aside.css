@@ -1,0 +1,28 @@
+@import url(../token.css);
+
+
+.title-input-box {
+    background-color: var(--primary-darkblue);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    /* flex-direction: column; */
+
+    padding: 20px;
+}
+.title-input-box h2{
+    color: var(--primary-white);
+    font-size: 20px;
+    font-weight: 600;
+}
+.title-input-box svg{
+    width: 32px;
+    height: 32px;
+}
+.title-input-box svg path{
+    fill: var(--primary-white);
+}
+
+

@@ -1,0 +1,294 @@
+@import url(../token.css);
+
+body{
+    width: 100vw;
+    height: 100vh;
+
+    /* max-height: 100vh; */
+    /* overflow: hidden; */
+}
+
+
+#capture.shot{
+    transform: scale(150%);
+}
+
+/* HEADER STYLE */
+#menu{
+    width: 100%;
+    background-color: var(--primary-black);
+
+    padding: 20px 40px;
+
+    z-index: 5;
+}
+
+.menu__nav{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* LOGO HEADER  */
+#menu__logo{
+    max-width: 200px;
+}
+#menu__logo svg{
+    width: 100%;
+}
+
+
+
+/* BASE IMAGE EDITOR */
+.base{
+    background-color: var(--secondary-black);
+    max-height: 100%;
+    height: 100%;
+
+    box-shadow: inset 0px 7px 16px 14px rgb(0 0 0 / 10%);
+}
+
+.base__center{
+    display: flex;
+
+    max-width: 1300px;
+    min-height: 100%;
+
+    margin: 0 auto;
+
+    /* background-color: rgb(7, 42, 17); */
+}
+
+
+
+.base__view{
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    max-height: 100vh;
+    overflow-y: auto;
+    background-color: var(--secondary-black);
+    padding-bottom: 50px;
+}
+
+.base__image{
+    position: relative;
+    background-color: #D9D9D9;
+
+    width: 40%;
+    min-width: 440px;
+    height: fit-content;
+
+    margin-top: 20px;
+}
+
+.base__image__header{
+    display: flex;
+    justify-content: center;
+    text-align: end;
+
+    width: 100%;
+    background-color: var(--header-color);
+
+    padding-top:20px;
+    padding-bottom: 30px;
+
+    z-index: 1;
+}
+
+.base__image__title{
+    width: 300px;
+}
+.base__image__title svg{
+    min-width: 100%;
+}
+.base__image__title .area-name{
+    margin-top: -5px;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+.base__image__article{
+    display: flex;
+    flex-direction: column;
+
+    gap:16px;
+
+    position: relative;
+    background-color: white;
+    
+    min-height: fit-content;
+    min-height: 300px;
+    width: 400px;
+    max-width: 400px;
+
+    margin: 0 auto;
+    margin-top: -20px;
+    padding: 20px 30px;
+
+    border-radius: 20px;
+
+    z-index: 2;
+}
+
+
+.base__image__logotipo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 15px 0;
+}
+
+/* EDIT BASE SIDE  */
+.base__edit{
+    min-width: 400px;
+    background-color: #2E3239;
+
+    box-shadow: -17px 0px 40px 9px rgba(0, 0, 0, 0.1);
+}
+
+.base__image__topico{
+    position: relative;
+}
+
+.title-topic{
+    width: 100%;
+    color: var(--header-color);     
+}
+.base__image__topico .close-topic{
+    right: -10px;
+}
+
+/* ESTRUTURA DE CONTORNO  */
+.image__input{
+    border: none;
+    width: 100%;
+
+    resize: none;
+}
+.base__image__topico01 ol{
+    margin-left: 16px;
+}
+
+
+
+
+
+
+
+/* LISTAS E BOTOES DE EDIÇÃO  */
+.image__title__box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.addItem {
+    position: absolute;
+    left: -25px;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--header-color);
+    width: 20px;
+    height: 20px;
+
+    font-weight: 800;
+    color: white;
+    text-decoration: none;
+
+    border-radius: 50%;
+
+    transform: rotate(45deg);
+    box-shadow: 3px 3px 5px 0px #00000046;
+    cursor: pointer;
+}
+.addItem:hover{
+    box-shadow: inset 2px 2px 5px 0px #00000046;
+}
+
+.removeToShot {
+    display: none !important;
+}
+
+.base__image__topico ol{
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+    margin-left: 20px;
+}
+
+.item {
+    position: relative;
+    display: flex;
+    width: 100%;
+
+    gap: 20px;
+}
+
+.item li {
+    text-align: justify;
+    width: 100%;
+}
+
+.closeItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #eb1b1b;
+    color: white;
+    font-weight: 600;
+    position: absolute;
+
+    right: -25px;
+    top: 0;
+
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+
+    box-shadow: 2px 2px 4px 0px #5f080840;
+
+    cursor: pointer
+}
+.closeItem:hover{
+    box-shadow: inset 2px 2px 5px 0px #25010146;
+
+}
+
+.teste{
+    top: -5px;
+}
+
+
+
+.addTopic{
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    background-color: green;
+    padding: 5px 10px;
+    opacity: 70%;
+
+    color: white;
+    font-weight: 600;
+
+    transition: all 0.3s;
+    border-radius: 0 0 10px 0;
+
+
+    cursor: pointer;
+}
+.addTopic:hover{
+    opacity: 1;
+}

@@ -84,13 +84,12 @@
                                     d="M20.0842 20.2528H7.83677C7.08013 20.2528 6.53066 19.8334 6.19137 18.9915C6.08028 18.7199 5.73799 17.5703 5.73799 13.5511C5.73799 8.99187 6.04124 7.87241 6.2214 7.44394C6.5817 6.58399 7.11916 6.15552 7.83677 6.15552H20.0752C20.1472 5.76326 20.2283 5.40419 20.3214 5.09038C20.5886 4.19723 20.9909 3.25882 21.5224 2.3023C21.8887 1.64451 22.3061 1.0531 22.7715 0.528076H7.24827C4.62704 0.528076 2.71442 1.61132 1.51039 3.78083C1.12306 4.48086 0.780772 5.23521 0.564588 5.9624C-0.252106 8.69616 0.0241284 16.997 0.138225 18.0199C0.354409 19.9329 0.771764 21.4688 1.39329 22.6275C2.55828 24.797 4.50994 25.8802 7.24827 25.8802H22.6424C22.1199 25.2858 21.7056 24.6612 21.3873 24.0668C20.8078 22.9835 20.3784 21.7253 20.0842 20.2528V20.2528Z"
                                     fill="white" />
                             </svg>
-                            <h2>Marketing</h2>
+                            <h2 class="area-name">Marketing</h2>
                         </section>
                     </header>
 
                     <div class="base__image__article">
-
-
+                        <!-- OS TÓPICOS SERÃO PREENCHIDOS AQUI  -->
                     </div>
 
                     <div class="base__image__logotipo">
@@ -172,34 +171,82 @@
 
             </section>
 
-            <aside class="base__edit" onclick="shot()">
+            <aside class="base__edit">
+                <section class='input-section'>
+                    <div class="title-input-box">
+                        <svg width="71" height="71" viewBox="0 0 71 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M63.4301 20.208H60.4541C59.7501 16.688 59.0141 14 58.2461 12.144C57.4781 10.288 56.2301 9.008 54.5021 8.304C52.7741 7.6 50.1181 7.248 46.5341 7.248H40.4861V53.424C40.4861 56.304 40.7101 58.448 41.1581 59.856C41.6061 61.2 42.5021 62.096 43.8461 62.544C45.1901 62.928 47.2381 63.12 49.9901 63.12V66H22.1501V63.12C24.8381 63.12 26.8541 62.928 28.1981 62.544C29.5421 62.096 30.4381 61.2 30.8861 59.856C31.3341 58.448 31.5581 56.304 31.5581 53.424V7.248H25.4141C21.8941 7.248 19.2381 7.6 17.4461 8.304C15.7181 9.008 14.4701 10.288 13.7021 12.144C12.9341 14 12.1981 16.688 11.4941 20.208H8.51813L9.57413 2.928H62.6621L63.4301 20.208Z"
+                                fill="black" />
+                        </svg>
+                        <h2>Configurações de cabeçalho</h2>
+                    </div>
+                    <div class="input-box">
+                        <label for="area-input">Área</label>
+                        <select name="area-input" id="area-input" class="input" onchange="changeArea()">
+                            <option value="">Selecione uma área</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Saúde e segurança na indústria">Saúde e segurança na indústria</option>
+                            <option value="Centro de serviços compartilhados">Centro de serviços compartilhados</option>
+                            <option value="Gestão estratégica">Gestão estratégica</option>
+                            <option value="Educação e tecnologia">Educação e tecnologia</option>
+                        </select>
+                    </div>
 
-                <div class="input__topico01">
-                    <label for="">label</label>
-                    <input type="text">
-                </div>
+                    <div class="input-box">
+                        <label for="color-input">Cores</label>
+                        <select name="color-input" id="color-input" class="input" onchange="changeColor()">
+                            <option value="padrao">Cores padrão</option>
+                            <option value="laranja">Laranja</option>
+                            <option value="verde">Verde</option>
+                            <option value="rosa">Rosa</option>
+                            <option value="marrom">Marrom</option>
+                            <option value="azul">Azul</option>
+                        </select>
+                    </div>
+                </section>
             </aside>
+
+
+
+            <style>
+                .input-section {
+                    display: flex;
+                    flex-direction: column;
+
+                    gap: 20px;
+
+                    width: 100%;
+                    height: fit-content;
+                }
+
+
+                .input-box {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0 40px;
+                }
+
+                .input-box label {
+                    color: #C2C4C7;
+                    font-size: 16px;
+                }
+
+                .input-box .input {
+                    height: 28px;
+
+                    border: none;
+                }
+            </style>
+
         </div>
     </div>
-
-    <script>
-        // let y = document.querySelector('.topico01.title-topic')
-        // let t = document.querySelector('.item01')
-
-
-        // addEventListener('focusout', (event) => {
-        //     console.log(event.target)
-
-        //     if (event.target == t) {
-        //         console.log('aaaaaaaaaaaaaaa')
-        //     }
-        // });
-    </script>
 
     <script src="src/js/clearText.js"></script>
     <script src="src/js/dinamicTopics.js"></script>
     <script src="src/js/library/LIBhtml2canvas.js"></script>
     <script src="src/js/downloardImage.js"></script>
+    <script src="src/js/changeHeader.js"></script>
 </body>
 
 </html>
