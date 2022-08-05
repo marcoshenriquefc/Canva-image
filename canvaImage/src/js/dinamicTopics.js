@@ -16,7 +16,7 @@ function addNewTopic() {
 
     // Adding classes
     divMain.classList.add('base__image__topico');
-    spanMain.classList.add('closeItem', 'teste');
+    spanMain.classList.add('closeItem', 'closeTopic');
     divTitle.classList.add('image__title__box');
 
     h3Title.classList.add('topico01', 'title-topic');

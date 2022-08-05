@@ -3,6 +3,13 @@
         min-width: 300px;
     }
 
+    .title-input-box svg{
+        width: 24px;
+        height: 24px;
+    }
+    .title-input-box h2{
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 800px) {
@@ -11,6 +18,10 @@
     }
     .input-section{
         margin-bottom: 10px;
+    }
+
+    .base__center{
+        min-height: auto;
     }
 }
 

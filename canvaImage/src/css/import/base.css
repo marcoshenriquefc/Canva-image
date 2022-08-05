@@ -1,6 +1,8 @@
 body {
     width: 100vw;
     height: 100vh;
+    max-width: 100vw;
+    overflow: hidden;
 
     /* max-height: 100vh; */
     /* overflow: hidden; */
@@ -46,11 +48,16 @@ body {
 
 /* LOGO HEADER  */
 #menu__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 200px;
+    max-height: 35px;
 }
 
 #menu__logo svg {
     width: 100%;
+    height: 100%;
 }
 
 
@@ -67,7 +74,7 @@ body {
 .base__center {
     display: flex;
 
-    max-width: 1300px;
+    max-width: 1366px;
     min-height: 100%;
 
     margin: 0 auto;
@@ -207,16 +214,16 @@ body {
 
 .addItem {
     position: absolute;
-    left: -25px;
-    top: 0;
+    left: -40px;
+    top: 20px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background-color: var(--header-color);
-    width: 20px;
-    height: 20px;
+    background-color: var(--primary-darkblue);
+    width: 25px;
+    height: 25px;
 
     font-weight: 800;
     color: white;
@@ -257,18 +264,21 @@ body {
     text-align: justify;
     width: 100%;
 }
-
+.item li *{
+    font-size: 16px;
+    font-weight: 400;
+}
 .closeItem {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background-color: #eb1b1b;
+    background-color: #730C02;
     color: white;
     font-weight: 600;
     position: absolute;
 
-    right: -25px;
+    right: -40px;
     top: 0;
 
     border-radius: 50%;
@@ -285,8 +295,13 @@ body {
 
 }
 
-.teste {
-    top: -5px;
+.closeTopic {
+    top: -10px;
+    width: 24px;
+    height: 24px;
+    right: -42px;
+
+    background-color: #F22F1D;
 }
 
 
@@ -319,11 +334,11 @@ body {
 
 /* AJUSTE DOS SVGS  */
 .seloDigesti {
-    position: absolute;
+    position: relative;
 
     width: 40px;
     height: 40px;
-
+    transform: translateX(15px);    
     right: 16px;
 }
 
