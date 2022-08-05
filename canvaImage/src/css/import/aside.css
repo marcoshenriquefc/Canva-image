@@ -30,7 +30,8 @@
     width: 32px;
     height: 32px;
 }
-.title-input-box svg path{
+.title-input-box svg path,
+.title-input-box svg rect{
     fill: var(--primary-white);
 }
 

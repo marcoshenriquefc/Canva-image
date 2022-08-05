@@ -1,7 +1,6 @@
-
 addNewTopic()
 //Create new topic
-function addNewTopic() {
+function addNewTopic(titleTipic = 'Clique aqui para editar.:') {
     let divBase = document.querySelector('.base__image__article');
 
     //Main HMTL Elements
@@ -18,13 +17,14 @@ function addNewTopic() {
     divMain.classList.add('base__image__topico');
     spanMain.classList.add('closeItem', 'closeTopic');
     divTitle.classList.add('image__title__box');
+    listMain.classList.add('image__list');
 
     h3Title.classList.add('topico01', 'title-topic');
     spanAddItem.classList.add('addItem', 'active');
 
     //Seting attributes and values/text
     h3Title.setAttribute('contenteditable', 'true')
-    h3Title.innerHTML = 'Clique aqui para editar.:'
+    h3Title.innerHTML = titleTipic;
     spanMain.innerHTML = '\u00D7'
     spanAddItem.innerHTML = '\u00D7'
 
@@ -97,6 +97,42 @@ addEventListener('keypress', (event) => {
     }
 })
 
+
+
+
+let switchKey = false;
+
+addEventListener('keydown', (event) =>{
+    let lista = document.querySelector('.list-item');
+
+    if(event.target.classList.contains(lista.classList)
+        && event.key == 'Control' || event.key == 'Shift'){
+            switchKey = true;
+    }
+})
+
+addEventListener('keyup', (event) =>{
+    let lista = document.querySelector('.list-item');
+
+    if(event.target.classList.contains(lista.classList)
+        && event.key == 'Control' || event.key == 'Shift'){
+            switchKey = false;
+    }
+})
+
+addEventListener('keypress', (event) =>{
+    let lista = document.querySelector('.list-item');
+    let inputClicked= event.target;
+
+    if(inputClicked.classList.contains(lista.classList)
+        && event.key == 'Enter'
+        && switchKey == true){
+            // inputClicked.innerHTML += '<br>'
+
+            inputClicked.value = 2
+    }
+})
+
 //Cancel enter default
 function doNothing(event) {
 
@@ -111,32 +147,46 @@ function doNothing(event) {
         e.preventDefault();
     }
 
-    //Find HTML element list
-    let lista = event.target.parentElement.parentElement.parentElement;
-
-    //Take item list of specifical topic
-    let allItensTopic = event.target.parentElement.parentElement.childNodes;
-    let arrayAllItensToppic = [];
-    allItensTopic.forEach(e => {
-        arrayAllItensToppic.push(e);
-    })
-    //take last element
-    let lastItem = arrayAllItensToppic[arrayAllItensToppic.length - 1];
-
-    //Verify enter key pressed in list element
-    //Verify if last item is equals target item
-    if (lista.classList.contains('base__image__topico')
-        && lastItem == event.target.parentElement) {
-        //create a new item in list element
-        newItem(lista)
+    if(switchKey == false){
+        //Find HTML element list
+        let lista = event.target.parentElement.parentElement.parentElement;
+        // let topic = event.target;
+    
+        //Take item list of specifical topic
+        let allItensTopic = event.target.parentElement.parentElement.childNodes;
+        let arrayAllItensToppic = [];
+        allItensTopic.forEach(e => {
+            arrayAllItensToppic.push(e);
+        })
+        //take last element
+        let lastItem = arrayAllItensToppic[arrayAllItensToppic.length - 1];
+    
+        //Verify enter key pressed in list element
+        //Verify if last item is equals target item
+        if (lista.classList.contains('base__image__topico')
+            && lastItem == event.target.parentElement) {
+            //create a new item in list element
+            newItem(lista)
+        }
+    
+    
+    
+        if (event.target.classList.contains("title-topic")) {
+            let topic = [event.target];
+    
+            allItensTopic = event.target.parentElement.parentElement.querySelectorAll('.item');
+            nextItem(event.target, allItensTopic)
+        }
+        else{
+            nextItem(event.target, allItensTopic)
+        }
     }
-
-    nextItem(event.target, allItensTopic)
 }
 
 //Focus in next item 
 function nextItem(itemAtual, listaItem) {
     let nextItemArray;
+
 
     listaItem.forEach((element, index) => {
         element = element.querySelector('.list-item')
@@ -144,5 +194,10 @@ function nextItem(itemAtual, listaItem) {
             nextItemArray = listaItem[index + 1].querySelector('.list-item')
         }
     })
+
+    if(itemAtual.classList.contains("title-topic")){
+        nextItemArray = listaItem[0].querySelector('.list-item')
+        // console.log(listaItem[0])
+    }
     nextItemArray.focus()
 }

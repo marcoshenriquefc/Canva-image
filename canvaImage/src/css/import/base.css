@@ -25,8 +25,13 @@ body {
     -ms-user-select: none;
     user-select: none;
 }
+
 #capture.shot {
     transform: scale(150%);
+}
+
+#capture *{
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 /* HEADER STYLE */
