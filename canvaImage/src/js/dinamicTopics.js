@@ -127,9 +127,9 @@ addEventListener('keypress', (event) =>{
     if(inputClicked.classList.contains(lista.classList)
         && event.key == 'Enter'
         && switchKey == true){
-            // inputClicked.innerHTML += '<br>'
+            inputClicked.innerHTML += '<br>'
 
-            inputClicked.value = 2
+            // inputClicked.value = 2
     }
 })
 
